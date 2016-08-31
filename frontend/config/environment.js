@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    host: 'https://dry-reaches-72298.herokuapp.com/',
+    host: 'http://localhost:3000',
     modulePrefix: 'borrowers',
     environment: environment,
     baseURL: '/',
