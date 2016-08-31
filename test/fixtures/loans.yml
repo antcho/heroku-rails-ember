@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notes: MyString
+  returned: false
+  createdAt: 2016-08-01
+  friend: one
+  article: one
+
+two:
+  notes: MyString
+  returned: false
+  createdAt: 2016-08-01
+  friend: two
+  article: two
