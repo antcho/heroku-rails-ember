@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20160802134023) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -35,8 +38,10 @@ ActiveRecord::Schema.define(version: 20160802134023) do
     t.integer  "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_loans_on_article_id"
-    t.index ["friend_id"], name: "index_loans_on_friend_id"
+    t.index ["article_id"], name: "index_loans_on_article_id", using: :btree
+    t.index ["friend_id"], name: "index_loans_on_friend_id", using: :btree
   end
 
+  add_foreign_key "loans", "articles"
+  add_foreign_key "loans", "friends"
 end
